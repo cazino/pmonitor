@@ -37,9 +37,15 @@ class PMonitor(object):
     def _write_corefile(self, path):
         subprocess.call(["gcore", "-o", path, "%s" % self._pid])
 
+    def _list_fd_str(self):
+        fds = self._list_fd()
+        return '\n'.join(fds)
+
     def _dump_infos(self):
         with open("%s_meminfo" % self._pid, 'wb') as f:
             f.write(self._read_meminfo())
+        with open("%s_fdlist" % self._pid, 'wb') as f:
+            f.write(bytes(self._list_fd_str(), 'UTF-8'))
         with open("proc_meminfo", 'wb') as f:
             f.write(read_meminfo())
         with open("loadavg", 'wb') as f:
