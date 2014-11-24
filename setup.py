@@ -28,6 +28,6 @@ setup(name='pmonitor',
       entry_points="""\
       [console_scripts]
       pmonitor = pmonitor.main:run
-      pm-dummydaemon = pmonitor.testing:run
+      pmonitor-dd = pmonitor.testing:run
       """,
       )
