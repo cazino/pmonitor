@@ -4,7 +4,7 @@ Deliberate use of python stdlib only (could have used psutil, or other packages)
 
 
 Requirements:
- - Tested in python 3.4
+ - Tested in python 3.4, requires setuptools
  - gdb (we use gcore)
 
 Usage: 
