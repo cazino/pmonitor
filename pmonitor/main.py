@@ -1,4 +1,6 @@
-"""
+""" Main module.
+Expose the PMonitor class, some helper functions,
+and a run function.
 """
 
 import argparse
@@ -18,7 +20,6 @@ class PMonitor(object):
 
     def _list_fd(self):
         """List file descriptors.
-
         TODO add option to ignore or not deleted files, sockets, pipes.
         """
         links = list()
